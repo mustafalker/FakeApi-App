@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { FakeApi } from './fake-api.model';
 import { NgForm } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -35,4 +36,9 @@ export class FakeApiService {
     this.formData = new FakeApi()
     this.formSubmitted = false;
   }
+
+  getComment(): Observable<any[]> {
+    return this.http.get<any[]>(environment.apiBaseUrl + '/RemoveComment'); 
+  }
+  
 }
