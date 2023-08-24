@@ -9,12 +9,12 @@
                   </div>
                   <div class="card-body">
                       <form type="hidden" #form="ngForm" class="form-group" (submit)="onSubmit(form)" 
-                      [class.submitted]="service.formSubmitted" >
+                      [class.submitted]="service.formSubmitted">
                           <div class="row">
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
-                                  <input type="number" matInput placeholder="id" required name="id" #id="ngModel"
-                                  [(ngModel)]="service.formData.id" novalidate autocomplete="off" min="1" max="2147483646">
+                                  <input type="number" matInput placeholder="id" required name="id"
+                                    [(ngModel)]="service.formData.id" novalidate autocomplete="off" min="1" max="2147483646">
                                 </mat-form-field>
                               </div>
                               <div class="col-md-6">
@@ -47,7 +47,7 @@
                                 </mat-form-field>
                               </div>
                           </div>
-                          <button type="submit" class="btn btn-danger pull-right" value="Add Comment">Add Comment</button>
+                          <button type="submit" class="btn btn-danger pull-right" value="Add Comment" [disabled]="form.invalid">Add Comment</button>
                           <div class="clearfix"></div>
                       </form>
                   </div>

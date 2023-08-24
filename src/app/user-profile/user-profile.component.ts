@@ -12,10 +12,11 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  [x: string]: any;
-  form: FormGroup;
+  addCommentForm: FormGroup;
 
-  constructor(private http: HttpClient , public service : FakeApiService,private toastr: ToastrService,private fb: FormBuilder) {}
+  constructor(private http: HttpClient , public service : FakeApiService,private toastr: ToastrService,private fb: FormBuilder) {
+    this.addCommentForm = this.fb.group({});
+  }
 
   onSubmit(form: NgForm) {
     if (form.valid){
@@ -28,9 +29,9 @@ export class UserProfileComponent {
       .subscribe({
         next: res => {
           this.service.formSubmitted = true;
-          this.service.list = res as FakeApi[]
-          this.service.resetForm(form)
-          this.toastr.success('Inserted Success', 'Comment Added')
+          this.service.list = res as FakeApi[];
+          this.service.resetForm(form);
+          this.toastr.success('Inserted Success', 'Comment Added');
         },
         error: err => {
           console.log(err);

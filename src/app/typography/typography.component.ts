@@ -19,14 +19,7 @@ export class TypographyComponent implements OnInit {
   constructor(public service : FakeApiService ,private http : HttpClient ,private toastr: ToastrService) { }
 
   ngOnInit() {
-    this.service.getComment().subscribe((yorumlar: any[]) => {
-      this.comments = yorumlar;
-      this.loadComments();
-
-      interval(5000).subscribe(() => {
-        this.loadComments();
-      });
-    });
+    this.loadComments();
   }
   loadComments() {
     this.service.getComment().subscribe(
@@ -38,19 +31,19 @@ export class TypographyComponent implements OnInit {
       }
     );
   }
-  onDeleteComment(id : number){
-    if(confirm('Are you sure to delete this record?'))
-    this.http.delete(environment.apiBaseUrl + '/RemoveComment'+ '/' +id)
-    .subscribe({
-      next:res =>{
-        this.service.list = res as FakeApi[]
-        this.toastr.error('Deleted Success', 'Comment Deleted')
-        this.loadComments()
-      }
-    })
-  }
-  onDeleteAllComments(id : string){
-    this.http.delete(environment.apiBaseUrl + '/RemoveComment')
-    .subscribe();
+  onDeleteCommentAndRefresh(id: number) {
+    if (confirm('Are you sure to delete this comment?')) {
+      this.http.delete(environment.apiBaseUrl + '/RemoveComment' + '/' + id, { responseType: 'text' })
+        .subscribe({
+          next: res => {
+            this.toastr.success('Deleted Successful', 'Comment Deleted');
+            this.loadComments();
+          },
+          error: err => {
+            this.toastr.error('Deletion was not successful');
+            console.error('Error while deleting comment:', err);
+          }
+        });
+    }
   }
 }

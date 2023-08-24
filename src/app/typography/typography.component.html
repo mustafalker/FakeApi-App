@@ -11,8 +11,8 @@
                         <table class="table">
                             <thead>
                               <tr>
-                                <th scope="col">Remove</th>
-                                <th scope="col">İd</th>
+                                <th scope="col">#</th>
+                                <th scope="col">Id</th>
                                 <th scope="col">postId</th>
                                 <th scope="col">Name</th>
                                 <th scope="col">Email</th>
@@ -32,7 +32,7 @@
                                 <td>{{comment.email}}</td>
                                 <td>{{comment.body}}</td>
                                 <td>
-                                    <i class="fa-solid fa-trash-can fa-lg mouse-hover" (click)="onDeleteComment(comment.id)"></i>
+                                    <i class="fa-solid material-icons mouse-hover"(click)="onDeleteCommentAndRefresh(comment.id)">delete</i>
                                   </td>
                               </tr>
                             </tbody>

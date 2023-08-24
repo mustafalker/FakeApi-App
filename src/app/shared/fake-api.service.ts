@@ -37,8 +37,7 @@ export class FakeApiService {
     this.formSubmitted = false;
   }
 
-  getComment(): Observable<any[]> {
+  getComment(): Observable<number[]> {
     return this.http.get<any[]>(environment.apiBaseUrl + '/RemoveComment'); 
   }
-  
 }
