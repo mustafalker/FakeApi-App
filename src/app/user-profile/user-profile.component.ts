@@ -12,11 +12,15 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  addCommentForm: FormGroup;
+  constructor(private http: HttpClient , public service : FakeApiService,private toastr: ToastrService,private fb: FormBuilder) { }
 
-  constructor(private http: HttpClient , public service : FakeApiService,private toastr: ToastrService,private fb: FormBuilder) {
-    this.addCommentForm = this.fb.group({});
+  inputValue: string = '';
+  isInputEmpty: boolean = false;
+
+  checkInput() {
+    this.isInputEmpty = this.inputValue.trim() === '';
   }
+
 
   onSubmit(form: NgForm) {
     if (form.valid){

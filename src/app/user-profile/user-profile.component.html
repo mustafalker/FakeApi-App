@@ -15,7 +15,9 @@
                                 <mat-form-field class="example-full-width">
                                   <input type="number" matInput placeholder="id" required name="id"
                                     [(ngModel)]="service.formData.id" novalidate autocomplete="off" min="1" max="2147483646">
-                                </mat-form-field>
+                                  </mat-form-field>
+                                  <div *ngIf="form.controls['id']?.hasError('required') && form.controls['id'].touched" class="error-message">Bu kısım boş bırakılamaz.</div>
+                                  <div *ngIf="form.controls['id']?.hasError('min') && !form.controls['id'].hasError('required') && (form.controls['id'].valid || form.controls['id'].dirty)" class="error-message">id değeri sıfırdan farklı olmalıdır.</div>
                               </div>
                               <div class="col-md-6">
                                 <mat-form-field class="example-full-width">
