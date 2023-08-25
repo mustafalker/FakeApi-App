@@ -40,4 +40,17 @@ export class FakeApiService {
   getComment(): Observable<number[]> {
     return this.http.get<any[]>(environment.apiBaseUrl + '/RemoveComment'); 
   }
+
+  updateComment(comment: FakeApi): Observable<any> {
+    return this.http.put(
+      `${environment.apiBaseUrl}/UpdateComment/${comment.id}`,
+      comment
+    );
+  }
+
+  getCommentById(id: number): Observable<FakeApi> {
+    return this.http.get<FakeApi>(
+      `${environment.apiBaseUrl}/UpdateComment/${id}`
+    );
+  }
 }

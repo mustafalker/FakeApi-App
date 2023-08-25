@@ -1,4 +1,8 @@
-.tar{
-    align-items: center;
-    justify-content: between;
+.table-link a {
+    color: black;
+    text-decoration: underline none;
+}
+
+.table-link a:hover {
+    color: red;
 }
