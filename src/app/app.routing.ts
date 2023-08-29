@@ -19,7 +19,8 @@ const routes: Routes =[
       loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
     }]
   },
-  { path: 'comment/:id', component: NotificationsComponent }
+  { path: 'comment/:id', component: NotificationsComponent },
+  // { path: 'notifications/:id', component: NotificationsComponent }
   
 ];
 

@@ -24,7 +24,7 @@
                                     <tr *ngIf="comments.length < 1">
                                         <td colspan="5">No Comment Available</td>
                                     </tr>
-                                    <tr *ngFor="let comment of comments; index as i" (click)="loadComment(comment.id)">
+                                    <tr *ngFor="let comment of comments; index as i" (click)="(comment.id)">
                                         <th scope="row">{{i+1}}</th>
                                         <td><a [routerLink]="['/comment', comment.id]">{{comment.id}}</a></td>
                                         <td><a [routerLink]="['/comment', comment.id]">{{comment.postId}}</a></td>
