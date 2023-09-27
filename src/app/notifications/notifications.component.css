@@ -1,0 +1,9 @@
+.mt100{
+    margin-top: 100px ;
+}
+
+.btn-custom {
+    background: linear-gradient(to right, #ff9999, #ff0000);
+    color: white;
+    padding: 10px 20px;
+}

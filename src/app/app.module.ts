@@ -20,7 +20,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
-    ToastrModule.forRoot({ preventDuplicates: true , maxOpened: 1 }), // ToastrModule added
+    ToastrModule.forRoot({ preventDuplicates: true, maxOpened: 1 }), // ToastrModule added
   ],
   declarations: [
     AppComponent,

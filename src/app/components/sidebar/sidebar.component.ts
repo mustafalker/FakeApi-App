@@ -8,11 +8,11 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'AddCommentFromApi',  icon: 'add', class: '' },
-    { path: '/user-profile', title: 'AddCommentFromVS',  icon:'add_comment', class: '' },
-    { path: '/table-list', title: 'ReadComment',  icon:'library_books', class: '' },
-    { path: '/typography', title: 'RemovoComment',  icon:'delete', class: '' },
-    { path: '/notifications', title: 'UpdateComment',  icon:'update', class: '' },
+    { path: '/dashboard', title: 'Dashboard',  icon: 'dashboard', class: '' },
+    { path: '/user-profile', title: 'Add Comment',  icon:'add_comment', class: '' },
+    { path: '/table-list', title: 'Read Comment',  icon:'library_books', class: '' },
+    { path: '/typography', title: 'Removo Comment',  icon:'delete', class: '' },
+    { path: '/notifications', title: 'Update Comment',  icon:'update', class: '' },
     { path: '/icons', title: 'Icons',  icon:'bubble_chart', class: '' },
 ];
 

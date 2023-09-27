@@ -15,6 +15,7 @@ export class NotificationsComponent implements OnInit {
 
   commentId: number;
   comment: FakeApi = new FakeApi();
+  test : Date = new Date();
 
   url: string = environment.apiBaseUrl + '/UpdateComment'
   location: any;
@@ -60,3 +61,4 @@ export class NotificationsComponent implements OnInit {
     });
   }
 }
+

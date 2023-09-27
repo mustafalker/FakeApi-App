@@ -20,8 +20,8 @@
                         </div>
                         <div class="col-md-6">
                             <mat-form-field class="example-full-width">
-                                <input matInput placeholder="postId" name="postId" [(ngModel)]="comment.postId"
-                                    required novalidate autocomplete="off">
+                                <input matInput placeholder="postId" name="postId" [(ngModel)]="comment.postId" required
+                                    novalidate autocomplete="off">
                             </mat-form-field>
                         </div>
                     </div>
@@ -43,14 +43,23 @@
                         <div class="col-md-12">
                             <label>Enter Your Comment</label>
                             <mat-form-field class="example-full-width">
-                                <textarea matInput placeholder="You can enter the comment you want to add in the field below."
-                                    name="comment" [(ngModel)]="comment.body" required novalidate autocomplete="off"></textarea>
+                                <textarea matInput
+                                    placeholder="You can enter the comment you want to add in the field below."
+                                    name="comment" [(ngModel)]="comment.body" required novalidate
+                                    autocomplete="off"></textarea>
                             </mat-form-field>
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-danger pull-right" (click)="updateCommentbyId()" [disabled]="form.invalid">Update Comment</button>
+                    <button type="submit" class="btn btn-danger pull-right" (click)="updateCommentbyId()"
+                        [disabled]="form.invalid">Update Comment</button>
                     <div class="clearfix"></div>
                 </form>
+                <div class="row mt100">
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <a routerLink="/table-list" type="button" class="btn btn-lg btn-custom">Go To Home Page</a>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

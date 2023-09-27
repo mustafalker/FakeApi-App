@@ -1,4 +1,9 @@
-.yuvarlak{
+.yuvarlak {
     border-radius: 50%;
-    box-shadow: 7px 4px 2px #808080 ;
+    box-shadow: 7px 4px 2px #808080;
+    margin-left: 10px;
 }
+
+/* .ml15{
+    margin-left: 15px;
+} */
